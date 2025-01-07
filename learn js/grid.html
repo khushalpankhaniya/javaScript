@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 5rem auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .items {
+            background: rgb(206, 198, 214);
+            padding: 2.5rem;
+            height: 200px;
+            border-radius: 5px;
+        }
+
+
+        .items:hover{
+          background-color: rgb(248, 229, 229);
+        }
+        .item5{
+            background-color: aqua;
+        }
+        @media (max-width:991px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .item5{
+                display: none;
+            }
+        }
+        
+        @media (max-width:550px) {
+            .item5{
+                display: block;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="items item5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi quo eius deleniti totam
+            repudiandae voluptates fugit suscipit odit beatae!</div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi quo eius deleniti totam
+            repudiandae voluptates fugit suscipit odit beatae!</div>
+        <div class="items item5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi quo eius deleniti totam
+            repudiandae voluptates fugit suscipit odit beatae!</div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi quo eius deleniti totam
+            repudiandae voluptates fugit suscipit odit beatae!</div>
+        <div class="items item5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi quo eius deleniti totam
+            repudiandae voluptates fugit suscipit odit beatae!</div>
+        <div class="items  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi quo eius deleniti totam
+            repudiandae voluptates fugit suscipit odit beatae!</div>
+        <div class="items item5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi quo eius deleniti totam
+            repudiandae voluptates fugit suscipit odit beatae!</div>
+        <div class="items ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi quo eius deleniti totam
+            repudiandae voluptates fugit suscipit odit beatae!</div>
+        <div class="items item5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi quo eius deleniti totam
+            repudiandae voluptates fugit suscipit odit beatae!</div>
+    </div>
+<p id="show"></p>
+    <input type="button" value="submit" id="btn">
+</body>
+<script>
+    const btn = document.querySelector('#btn');
+    const p = document.querySelector('#show');
+
+ function showtime() {
+      let date = new Date();
+    let dates = date.getMinutes();
+    let month = date.getHours();
+    let year = date.getSeconds();
+          
+   p.innerHTML = `${dates } ${month } ${year }`;
+   
+   console.log(p.innerHTML);
+}
+
+setInterval(showtime, 1000);
+</script>
+</html>

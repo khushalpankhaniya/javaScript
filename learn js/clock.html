@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+ <style>
+    body {
+        background-image: linear-gradient(to right, blue, black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        color: white;
+        padding: 15px 20px;
+        font-size: 65px;
+    }
+</style> 
+
+<body>
+    <div class="box">
+        <span id="houres">10</span>
+        <span>:</span>
+        <span id="minutes">10</span>
+        <span>:</span>
+        <span id="secondes">10</span>
+        <span id="session"></span> 
+    </div> 
+    
+</body>
+<script>
+
+    function displyetime() {
+        var a = new Date();
+        var hrs = a.getHours();
+        var min = a.getMinutes();
+        var sec = a.getSeconds();
+        var session = document.getElementById('session');
+
+        if (hrs > 12) {
+            session.innerHTML = 'PM ';
+            hrs = hrs - 12;
+        } else {
+            session.innerHTML = 'AM ';
+        }
+        document.getElementById("houres").innerHTML = hrs;
+        document.getElementById("minutes").innerHTML = min;
+        document.getElementById("secondes").innerHTML = sec;
+
+    }
+
+    setInterval(displyetime, 1000);
+
+</script>
+
+</html>

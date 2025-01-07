@@ -1,0 +1,129 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-image: url("back.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+
+    }
+    .grid {
+        height: 606px;
+        width: 606px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+      
+    }
+
+    .square {
+        height: 195px;
+        width: 200px;
+        /* border: 2px solid red;    */
+        
+
+    }
+
+    .mole {
+        background-image: url("1681289745.png");
+        background-origin: border-box;
+
+    }
+    h2{
+        color: white;
+    }
+</style>
+
+<body>
+
+    <h2>Your score: </h2>
+    <h2 id="score">0</h2>
+
+    <h2>time left: </h2>
+    <h2 id="time-left">0</h2>
+
+    <div class="grid">
+        <div class="square" id="1"></div>
+        <div class="square" id="2"></div>
+        <div class="square" id="3"></div>
+        <div class="square" id="4"></div>
+        <div class="square" id="5"></div>
+        <div class="square" id="6"></div>
+        <div class="square" id="7"></div>
+        <div class="square" id="8"></div>
+        <div class="square" id="9"></div>
+
+    </div>
+</body>
+
+<script>
+    const squares = document.querySelectorAll('.square')
+    const mole = document.querySelector('.mole')
+    const timeLeft = document.querySelector('#time-left')
+    const score = document.querySelector('#score')
+    let song = new Audio('mixkit-arcade-game-jump-coin-216.wav')
+    let playsong = new Audio('playsong.wav')
+    let Endsong = new Audio('Endsong.wav')
+
+    let result = 0
+    let hitPosition
+    let currentTime = 60
+    let timerId = null
+
+
+
+    function randomSquare() {
+        squares.forEach(square => {
+            square.classList.remove('mole')
+        })
+        let randomSquare = squares[Math.floor(Math.random() * 9)]
+        randomSquare.classList.add('mole')
+        hitPosition = randomSquare.id
+      
+
+    }
+
+    squares.forEach(square => {
+        square.addEventListener('mousedown', () => {
+            if (square.id == hitPosition) {
+                result++
+                score.textContent = result
+                hitPosition = null
+                song.play()
+                playsong.play()
+            }
+        })
+    })
+
+    function moveMole() {
+        timerId = setInterval(randomSquare, 800)
+    }
+    moveMole()
+
+    function countDown() {
+        currentTime--
+        timeLeft.textContent = currentTime
+        if (currentTime == 0) {
+            Endsong.play()
+            playsong.pause()
+            clearInterval(countDownTimerId)
+            clearInterval(timerId)
+            alert('GAME OVER! Your final score is ' + result)
+        }
+    }
+
+    let countDownTimerId = setInterval(countDown, 1000)
+</script>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar</title>
+    <!-- Include Bootstrap CSS and JS links here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container my-5  text-center ">
+        <h3>debounceSearch</h3>
+        <input type="text" class="form-control my-4" id="searchInput" placeholder="Search" onkeyup="debounceSearch()">
+        <div class="card-container row mx-auto justify-content-center">
+            <div class="card col-3 " style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">java</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-secondary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">javascript</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">python</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-secondary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">android</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">node js</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function debounce(func,delay) {  /* this debounce get one function and delay time as argument, after delaytime it call funcation  func.call();" */
+            let timeoutId;
+            return function () {
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                }
+                timeoutId = setTimeout(() => {
+                    func.call();
+                }, delay);
+            }
+        }
+
+        let debounceSearch = debounce(searchFun, 600);  /* debounce call searchFun funcation after 600 milsecond */
+
+        function searchFun() {
+            let filter = document.getElementById('searchInput').value.toUpperCase();
+            let cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                let title = card.querySelector('.card-title');
+                let cardText = card.querySelector('.card-text');
+                if (title.textContent.toUpperCase().includes(filter) || title.innerHTML.toUpperCase().includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';       
+                }
+            });
+        }
+    </script>
+</body>
+</html>

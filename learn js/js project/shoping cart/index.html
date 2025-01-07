@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Card Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="bg-blue-500 p-4 text-white">
+    <div class="container mx-auto md:flex md:items-center md:justify-between">
+      <a href="#" class="text-lg font-semibold flex items-center">
+        <i class="fas fa-store text-xl mr-2"></i>
+        My Shop
+      </a>
+
+
+      <input type="text" onchange="serach()">
+
+      <ul class="flex space-x-4 items-center">
+        <!-- Add other navigation links here -->
+        <li>
+          <!-- Shopping Cart Icon with Number -->
+          <a href="cart.html" class="relative hover:text-blue-200">
+            <i class="fas fa-cart-shopping text-2xl"></i>
+            <span
+              class="absolute -top-4 -right-2 bg-red-500 rounded-full text-white px-1 py-0.5 text-xs font-semibold cartAmount text-sm"
+              id="cartAmount">
+              <span class="bg-red-500 text-white rounded-full px-1 py-1 text-sm">0</span>
+            </span>
+          </a>
+          
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+
+
+  <!-- Main Content -->
+  <div class="min-h-screen bg-gray-100 flex items-center justify-center container mx-auto flex space-x-4" id="Shop">
+
+
+  </div>
+
+</body>
+<script src="Data.js"></script>
+<script src="main.js"></script>
+
+</html>

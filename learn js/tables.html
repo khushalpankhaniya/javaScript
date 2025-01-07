@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+  }
+
+  ul {
+    padding: 15px 15px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+
+  li {
+    cursor: pointer;
+    list-style: none;
+    margin-right: 20px;
+    display: inline-block;
+  }
+
+  section {
+    background-color: rgb(208, 202, 202);
+    text-align: center;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  #search {
+    width: 25vh;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    border-radius: 5px;
+  }
+  #btn{
+    padding: 7px 10px;
+    background-color: transparent;
+    color: green;
+    border: 2px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #btn:hover{
+    background-color: green;
+    color: white;
+  }
+  img{
+   border-radius: 50%;
+   width: auto;
+   height: 34px;
+  }
+
+  .card-contanier{
+    margin-right:  15%;
+    margin-left:  15%;
+    display: flex;
+    justify-content: center;
+  }
+  .card{
+    border: 2px solid black;
+    text-align: center;
+    margin-top: 5%;
+  }
+
+
+</style>
+
+<body>
+
+  <nav>
+    <img src="back.jpg" alt="">
+    <ul>
+      <li>homes</li>
+      <li>About</li>
+      <li>Shop</li>
+      <li>Contant us</li>
+    </ul>
+    <div>
+
+      <input type="search" name="" id="search" placeholder="Search">
+      <input type="button" value="submit" id="btn">
+    </div>
+  </nav>
+  <section>
+    <h1>welcome to my web</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur blanditiis doloremque molestiae obcaecati autem
+      aliquam numquam rerum? Laborum possimus quidem aliquid rem autem eius velitlorem.lorem25</p>
+  </section>
+
+
+  <main>
+    <div class="card-contanier">
+      <div class="card">
+        <h1>sevice</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, quisquam.</p>
+        <input type="button" id="btn" value="read more">
+      </div>
+      <div class="card">
+          <h1>sevice</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, quisquam.</p>
+        <input type="button" id="btn" value="read more">
+      </div>
+      <div class="card">
+          <h1>sevice</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, quisquam.</p>
+        <input type="button" id="btn" value="read more">
+      </div>
+    </div>
+  </main>
+
+ 
+  <script>
+    // fetch('https://jsonplaceholder.typicode.com/comments')
+    //       .then(response => response.json())
+    //       .then(json => {
+    //         for(var x in json){
+    //           var dis = ` ${json[x].name} <br> ${json[x].id} <br> ${json[x].email} <br> ${json[x].body} <br><br> `;
+
+    //           document.write(dis);
+    //         }
+    // })
+
+    fetch('https://jsonplaceholder.typicode.com/comments')
+      .then(function name(respone) {
+        return respone.json();
+      })
+      .then(function name2(final) {
+        console.log(final);
+      })
+      .catch(function exception(e) {
+        console.log(e);
+      })
+  </script>
+
+</html>

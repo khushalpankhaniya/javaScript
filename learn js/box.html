@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .btn {
+            border: none;
+            color: red;
+            border-radius: 0.5em;
+            padding: 0.8em 1.5em;
+            margin: 0.5em;
+            cursor: pointer;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: red;
+            color: white;
+        }
+
+
+        .lg-heading {
+            font-size: 3.5rem;
+        }
+
+
+
+        .t-light {
+            color: #b3b1b1;
+        }
+
+        html {
+            font-size: 62.5%;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .wraper {
+            background: url("https://objective-wright-bf0615.netlify.app/img/header-image.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            height: 64px;
+            padding-top: 1rem;
+        }
+
+        nav .logo {
+            font-size: 4rem;
+        }
+
+        nav .nav-link ul {
+            display: flex;
+            list-style: none;
+            text-transform: uppercase;
+            align-items: center;
+        }
+
+        nav .nav-link li {
+            margin-left: 2rem;
+            font-size: 1.5rem;
+        }
+
+        nav .nav-link li:hover {
+
+            border-bottom: 1px solid white;
+        }
+
+        /* __________________________________________________________________ */
+
+        header {
+            height: 85vh;
+            position: relative;
+            color: white;
+        }
+
+        header .contant {
+            background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2));
+            text-align: center;
+            position: absolute;
+            text-transform: uppercase;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            word-spacing: 0.5rem;
+        }
+
+        header .contant h1 {
+            font-size: 3rem;
+            padding-bottom: 1em;
+        }
+
+        header .contant p {
+            padding-bottom: 1em;
+            font-size: 1.5rem;
+        }
+
+        /* ------------------------------------showcase */
+
+        .showcase {
+            background-color: #ddd;
+            padding: 10rem 0;
+        }
+
+        .row {
+            height: 350px;
+            background-color: #fff
+        }
+
+        .row1 {
+            margin-bottom: 10rem;
+        }
+
+        .row1 .img-box,
+        .row2 .text-box {
+            float: left;
+            width: 50%;
+
+        }
+
+        .row2 .img-box,
+        .row1 .text-box {
+            float: right;
+            width: 50%;
+        }
+
+        .row .img-box {
+            height: 100%;
+        }
+
+        .row .img-box img {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .row .text-box {
+            padding: 3rem;
+        }
+
+        .row .text-box p {
+            font-size: 1.6rem;
+            margin-bottom: 0.5em;
+            letter-spacing: 0.15em;
+        }
+
+        /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+        .menu-box::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .menu-box .box {
+            width: 33.3333333%;
+            float: left;
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 0.5em;
+            letter-spacing: 0.15em;
+        }
+
+        .menu-box .box-1,
+        .box-3 {
+            background-color: #263238;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wraper">
+
+        <nav class="container">
+            <div class="logo">
+                <p>Kh</p>
+            </div>
+            <div class="nav-link">
+                <ul>
+                    <li>Home</li>
+                    <li>about</li>
+                    <li>contant us</li>
+                </ul>
+            </div>
+        </nav>
+
+        <header>
+            <div class="contant">
+                <h1>Welcome to my web</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem vitae, perferendis quasi sed incidunt
+                    quibusdam praesentium tenetur quia unde eos!</p>
+                <button class="btn">Learn
+                    more</button>
+            </div>
+        </header>
+    </div>
+
+    <section class="showcase">
+        <div class="container">
+            <div class="row row1">
+                <div class="img-box">
+                    <img src="https://objective-wright-bf0615.netlify.app/img/showcase-photo3.jpg" alt="" srcset="">
+                </div>
+                <div class="text-box">
+                    <h1 class="lg-heading">DEGANVY, U.K</h1>
+                    <p class=" t-light">orem ipsum dolor, sit amet consectetur adipisicing elit. Impedit incidunt nulla
+                        a corporis
+                        eveniet pariatur maiores, id quis, totam dolore praesentium facere consequatur rem, fuga minus!
+                        Rerum, dolorem praesentium. Nemo?</p>
+                </div>
+                <div></div>
+            </div>
+            <div class="row row2">
+                <div class="img-box">
+                    <img src="https://objective-wright-bf0615.netlify.app/img/showcase-photo3.jpg" alt="" srcset="">
+                </div>
+                <div class="text-box">
+                    <h1 class="lg-heading">DEGANVY, U.K</h1>
+                    <p class=" t-light">orem ipsum dolor, sit amet consectetur adipisicing elit. Impedit incidunt nulla
+                        a corporis
+                        eveniet pariatur maiores, id quis, totam dolore praesentium facere consequatur rem, fuga minus!
+                        Rerum, dolorem praesentium. Nemo?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="menu">
+        <div class="menu-box container">
+            <div class="box box-1">
+                <p>Adventure</p>
+                <p>orem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, quia. Corporis dolores ipsa a
+                    veniam molestias beatae, fuga ex laboriosam.</p>
+            </div>
+            <div class="box box-2">
+                <p>Adventure</p>
+                <p>orem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, quia. Corporis dolores ipsa a
+                    veniam molestias beatae, fuga ex laboriosam.</p>
+            </div>
+            <div class="box box-3">
+                <p>Adventure</p>
+                <p>orem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, quia. Corporis dolores ipsa
+                    aveniam molestias beatae, fuga ex laboriosam.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

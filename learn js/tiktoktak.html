@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color: cornflowerblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    .boared {
+        margin-top: 15%;
+        height: 300px;
+        width: 300px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+    }
+
+    .cell {
+        border-bottom: 5px solid black;
+        border-right: 5px solid black;
+        font-size: 50px;
+        text-align: center;
+        line-height: 95px;
+
+    }
+
+    .cell:nth-child(3n) {
+        border-right: none;
+    }
+
+    .cell:nth-child(n+7) {
+        border-bottom: none;
+    }
+    .cell.highlight{
+        background-color: aqua;
+    }
+</style>
+
+<body>
+    <div class="boared">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+</body>
+<script>
+    let cells = document.querySelectorAll(".cell")
+    let song = new Audio('mixkit-arcade-game-jump-coin-216.wav')
+    let Endsong = new Audio('Endsong.wav')
+
+    cells = Array.from(cells)
+    let currentPlayer = '0'
+    let winginCombination = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ]
+
+    function checkForWinner() {
+        winginCombination.forEach(function (combination) {
+            let check = combination.every(idx => cells[idx].innerText.trim() == currentPlayer)
+            if (check) {
+                Endsong.play()
+                highlightcells(combination)
+            }
+        })
+    }
+    function highlightcells(combination) {
+        combination.forEach(function(idx) {
+            cells[idx].classList.add('highlight')
+        })
+    }
+    cells.forEach(function (cell) {
+        cell.addEventListener('click', function () {
+            song.play()
+            if (cell.innerText.trim() != "") return
+            cell.innerText = currentPlayer
+            checkForWinner()
+            currentPlayer = currentPlayer == "x" ? "0" : "x"
+        })
+    })
+</script>
+
+</html>

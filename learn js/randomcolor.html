@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getRandomcolor</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body{
+        display: block;
+        margin-top: 300px;
+        text-align: center;
+        background-color: darkgrey;
+        }
+        button{
+            background: none;
+            outline: none;
+            border: 2px solid white;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        #hex{
+            color: white;   
+        }
+    </style>
+  </head>
+  <body>
+    <h1 id="hex">#B88FC9</h1>
+    <button onclick="getRandomcolor()">Click Me </button>
+</body>
+<script>
+    function getRandomcolor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+
+        for (let i = 0; i < 6; i++) {
+            color = color + letters[Math.floor(Math.random() * 16)]   
+        }
+        document.body.style.background = color;
+        document.getElementById("hex").innerHTML = color;  
+        
+    }
+    // setInterval(getRandomcolor, 1000);  
+  
+</script>
+</html>

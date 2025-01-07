@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Concert+One&family=Dancing+Script:wght@500&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+  
+    
+<body>
+    <div class="container my-5 w-50" id="wraper">
+        <h2 class="text-center my-3">WELCOME TO TO-DO</h2>
+        <input type="text" class="form-control my-2" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter title">
+            <textarea class="form-control" id="exampleInputEmail2" style="height: 100px" placeholder="Enter description"></textarea>
+        <button class="btn btn-primary my-2" id="btn">Add</button>
+       
+    </div>
+    
+
+          
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script>
+
+
+
+
+        btn.addEventListener('click', function () {
+            let indx = document.getElementById('exampleInputEmail1').value;
+            let indx2 = document.getElementById('exampleInputEmail2').value;
+            let btndel = document.getElementById('btndel');
+
+            if (indx === "" && indx2 === "") {
+                alert("Enter some value")
+            }
+            else{
+            let uls = document.createElement('div');
+            uls.classList.add('card');
+            uls.classList.add('my-2');
+            uls.innerHTML = ` <div class="card-body">
+                              <h5 class="card-title">${indx}</h5>
+                              <p class="card-text">${indx2}</p>
+                              <a href="#" class="btn btn-danger  btn-sm" id="del">Remove</a>
+                              <button class="btn btn-success btn-sm " onclick="updatedata()">Upadte data</button>
+                              </div>`;
+            wraper.appendChild(uls);
+
+            let delbtn = uls.querySelector('#del'); delbtn.addEventListener('click',function () {uls.remove();})
+                            }
+                            
+        })
+
+function updatedata() {
+
+    
+}
+
+
+    </script>
+
+</html>
